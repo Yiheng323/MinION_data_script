@@ -28,7 +28,7 @@ mkdir -p ${OUTPUT}
 cd $PBS_JOBFS
 mkdir workspace
 mkdir albacore_output
-cp ${INPUT}/*tar.gz workspace/.
+cp ${INPUT}/*.tar.gz workspace/.
 
 #go ahead with unziping and basecalling
 cd workspace
