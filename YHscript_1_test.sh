@@ -63,7 +63,7 @@ set -vx
 BASEFOLDER='/home/yiheng/test' # make sure the input file is only a copy
 NAME='Hu_FAH05731_albacore202'
 DATE='20171025'
-BARCODE='barcode10'
+BARCODE='barcode22'
 
 cd ${BASEFOLDER}/basecalled_data
 tar -xvf ${NAME}.tar.gz
@@ -71,7 +71,7 @@ cd ${NAME}/workspace
 
 ### filter CDS
 
-cat pass/${BARCODE}/*.fastq fail/${BARCODE}/*.fastq > ${NAME}.${BARCODE}.unlysed.fastq
+cat pass/${BARCODE}/*.fastq fail/${BARCODE}/*.fastq > ${NAME}.${BARCODE}.unlysed.fastq 
 gzip ${NAME}.${BARCODE}.unlysed.fastq
 gunzip -c ${NAME}.${BARCODE}.unlysed.fastq.gz | NanoLyse | gzip > ${NAME}.${BARCODE}.fastq.gz
 gunzip ${NAME}.${BARCODE}.fastq.gz
@@ -80,7 +80,7 @@ rm ${NAME}.${BARCODE}.unlysed.fastq.gz
 ### move to the workspace folder for further manipulation
 cd ${BASEFOLDER}
 mkdir -p workspace/${BARCODE}
-mv ${BASEFOLDER}/basecalled_data/${NAME}/workspace/pass/${NAME}.${BARCODE}.fastq ${BASEFOLDER}/workspace/${BARCODE}
+mv ${BASEFOLDER}/basecalled_data/${NAME}/workspace/${NAME}.${BARCODE}.fastq ${BASEFOLDER}/workspace/${BARCODE}
 cd ${BASEFOLDER}/workspace/${BARCODE}
 
 # do porechop to chop out adapter sequence
