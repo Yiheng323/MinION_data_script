@@ -21,7 +21,7 @@
 ###    python3 setup.py install
 ###    porechop -h
 ### 4. make rg database containing the species of interests, in this study the rg are made from wheat, Pst, Zymo strain W332, Pyre and stago reference genomes (all used unmasked genomes)
-###    (1). cd ~/bio/
+###    (1). cd ~/bio/ncbi/db
 ###    (2). download wheat genome from EnsemblPlants: ftp://ftp.ensemblgenomes.org/pub/plants/release-37/fasta/triticum_aestivum/dna/Triticum_aestivum.TGACv1.dna.nonchromosomal.fa.gz
 ###    (2). download Pst, Zymo, Pyre, Stago reference sequence from MycoCosm:
 ###         Pst: https://genome.jgi.doe.gov/Pucstr1/download/Pucstr1_GeneCatalog_proteins_20170922_promoters_1k.fa.gz
