@@ -47,6 +47,22 @@
 ###           Adding sequences from FASTA; added 756517 sequences in 236.097 seconds.
 
 
+############# New comment at 26/10/2017
+###           As the NanoLyse program did not work very well, as:
+###           1. the reference CDS genome is only 3.5kb but the author used the whole genome which is 48kb
+###           2. there is no clear explain in the README.txt about the principle of this program
+###           Therefore, I rebuilt the rg db with added DNA_CS sequence from ONT:
+###           DNA_CS.txt: https://assets.contentful.com/hkzaxo8a05x5/2IX56YmF5ug0kAQYoAg2Uk/159523e326b1b791e3b842c4791420a6/DNA_CS.txt
+###           $cat DNA_CS.fasta Wheat.fasta Stago.fasta Zymo.fasta Pyre.fasta Pst.fasta > rg.fasta
+###           $makeblastdb -in rg.fasta -dbtype nucl -title rg -out rg
+###           Building a new DB, current time: 10/26/2017 16:33:25
+###           New DB name:   rg
+###           New DB title:  rg
+###           Sequence type: Nucleotide
+###           Keep Linkouts: T
+###           Keep MBits: T
+###           Maximum file size: 1000000000B
+###           Adding sequences from FASTA; added 756518 sequences in 238.054 seconds.
 
 
 #!/bin/bash
