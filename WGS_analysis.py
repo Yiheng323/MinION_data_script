@@ -79,7 +79,7 @@ print ("INDIR = {}".format(d))
 print ("sep_barcodes = {}".format(s))
 print ("threads = {}".format(t))
 print ("ram = {}".format(r))
-print ("BLAST_DB_1 = {}".format(db1)
+print ("BLAST_DB_1 = {}".format(db1))
 #print ("BLAST_DB_2 = {}".format(db2)
 #BLAST_DB_2 = 'nt'
 
@@ -206,13 +206,13 @@ sep_barcodes_list = sep_barcodes.split(',')
 
 # In[70]:
 
-sep_barcodes_list
+# sep_barcodes_list
 
-make a barcode 00 folder
-loop throug all folders that are not in the sep_barcode list and combine those
-add 00 to the sep_barcode list
+# make a barcode 00 folder
+# loop throug all folders that are not in the sep_barcode list and combine those
+# add 00 to the sep_barcode list
 
-sep_barcodes_list
+# sep_barcodes_list
 # In[71]:
 
 #make the barcode00 folder to combine all the misidentified/unclassified barcode
