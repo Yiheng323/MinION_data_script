@@ -105,7 +105,7 @@ porechop -i ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.${BARCODE}.fastq -o ${BAS
 
 # convert the fastq to fasta
 
-sed '/^@/!d;s//>/;N' ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fastq > ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fasta
+seqtk seq -a ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fastq > ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fasta
 
 # do blastn for the fasta file
 
