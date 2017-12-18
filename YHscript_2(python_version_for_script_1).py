@@ -327,7 +327,7 @@ def print_porechop(barcode, folder, runid, fn):
     chopped_fastq = '%s.chopped.barcode%s.fastq'% (runid, barcode)
     porechop_step ="\n#now the porechop step\n"
     porechop_step += 'porechop -i %s/%s -o %s/%s --format fastq --middle_threshold 95\n'    %(folder,fastq, folder, chopped_fastq )
-    porechop_step += "sed '/^@/!d;s//>/;N' %s/%s > %s/%s\n"     %(folder, chopped_fastq, folder, chopped_fastq.replace('.fastq', '.fasta'))
+    porechop_step += "seqtk seq -a %s/%s > %s/%s\n"     %(folder, chopped_fastq, folder, chopped_fastq.replace('.fastq', '.fasta'))
     print(porechop_step, file=fn)
 
 
