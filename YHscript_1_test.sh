@@ -13,13 +13,14 @@
 ###    conda config --add channels defaults
 ###    conda config --add channels conda-forge
 ###    conda config --add channels bioconda
-### 3. install NanoLyse, porechop, bbmap:
+### 3. install NanoLyse, porechop, bbmap and seqtk:
 ###    conda install NanoLyse
 ###    conda install bbmap
 ###    git clone https://github.com/rrwick/Porechop.git
 ###    cd Porechop
 ###    python3 setup.py install
 ###    porechop -h
+###    conda install seqtk
 ### 4. make rg database containing the species of interests, in this study the rg are made from wheat, Pst, Zymo strain W332, Pyre and stago reference genomes (all used unmasked genomes)
 ###    (1). cd ~/bio/ncbi/db
 ###    (2). download wheat genome from EnsemblPlants: ftp://ftp.ensemblgenomes.org/pub/plants/release-37/fasta/triticum_aestivum/dna/Triticum_aestivum.TGACv1.dna.nonchromosomal.fa.gz
