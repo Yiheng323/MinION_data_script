@@ -233,15 +233,15 @@ if not os.path.exists(os.path.join(PASS_FOLDER, 'barcode00')):
 #cat all barcode misclassified/unclassified reads in the pass folder to one fastq file and redirect to barcode00 folder
 
 if not os.path.isfile('%s/barcode00.fastq' % os.path.join(PASS_FOLDER, 'barcode00')):
-    cat_fastq_command = 'cat'
+    #cat_fastq_command = 'cat'
     for folder in [y.split('/')[-1] for y in os.listdir(PASS_FOLDER)]:
         if folder not in ['barcode%s' % x for x in sep_barcodes_list]:
             tmp_folder = os.path.join(PASS_FOLDER, folder)
             #print(folder)
             for fastq in [os.path.join(tmp_folder, z) for z in os.listdir(tmp_folder)  if z.endswith('fastq')]:
-                cat_fastq_command += ' %s' % fastq
+                cat_fastq_command = 'cat %s' % fastq
                 #print(fastq)
-    cat_fastq_command +=' > %s/barcode00.fastq' % os.path.join(PASS_FOLDER, 'barcode00')
+    cat_fastq_command +=' >> %s/barcode00.fastq' % os.path.join(PASS_FOLDER, 'barcode00')
     cat_fastq_command_stderr = subprocess.check_output(cat_fastq_command, shell=True, stderr=subprocess.STDOUT)
 
 
