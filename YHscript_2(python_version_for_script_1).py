@@ -275,7 +275,7 @@ def print_begining_of_script(barcode, fn):
 #$ -V\n\
 #$ -j y\n\
 #$ -pe threads %s\n\
-#$ -l h_vmem=%s,virtual_free=%s\n\
+#$ -l h_vmem=%sg,virtual_free=%sg\n\
 #$ -N barcode_%s\n\
 set -vx\
 " %(threads, ram, ram, barcode)
