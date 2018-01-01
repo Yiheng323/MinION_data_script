@@ -378,7 +378,7 @@ def print_blastn_2(barcode, folder, runid, fn):
                                                               '.%shitno.barcode%s.'%( BLAST_DB_2, barcode)))
     blastn_step += "names=%s include=f\n" % hit_ids_fn
 
-#    print(blastn_step, file =fn)
+    print(blastn_step, file =fn)
 
 
 # In[81]:
