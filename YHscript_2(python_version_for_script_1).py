@@ -95,7 +95,7 @@ date = now.strftime("%Y%m%d")
 # In[54]:
 
 #define the path for control DNA sequence for nanolyse
-CDS_PATH = '/home/yiheng/bio/ncbi/db/DNA_CS.fasta.gz'
+CDS_PATH = '/home/yiheng/bio/ncbi/db/DNA_CS.fasta'
 
 
 # In[55]:
