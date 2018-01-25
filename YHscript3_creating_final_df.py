@@ -74,22 +74,39 @@ seq_df_headers = ['read_id','passes_filtering', 'sequence_length_template', 'mea
 
 # In[66]:
 
-#now get the sequencing_summary file
+#now get the headers sequencing_summary file
 base_called_folder = os.path.join(BASEDIR, 'basecalled_data')
+
+# here added a function to check the tar.gz file and its corresponding unzipped folder in the basecalled_data folder.  
+# If it is not unzipped, unzip it.
 for thing in os.listdir(base_called_folder):
-    if not os.path.isdir(os.path.join(base_called_folder, thing)):
-        next
+    judge_list = [os.path.isdir(os.path.join(base_called_folder, thing))]
+
+if any(x == True for x in judge_list):
+    seq_sum_file = os.path.join(base_called_folder, thing, 'sequencing_summary.txt')
+    if not os.path.exists(seq_sum_file):
+        print('No sequencing summary file from basecalled folder. Please go check')
+    
+    print("now getting the headers from %s" % seq_sum_file)
+    seq_df = pd.read_csv(seq_sum_file, sep='\t')
+    #capture the thing as the prefix of the fastq/fasta files in the barcode folders
+    prefix = thing
+    #might be a better way to only read in the wanted columns. Not subsetting afterwards.
+    #please go check
+    seq_df = seq_df.loc[:, seq_df_headers].copy()
+    
+elif all(x == False for x in judge_list):
+        
+    zipped_basecalled_file = os.path.join(base_called_folder, thing)
+    if zipped_basecalled_file.endswith('tar.gz'):
+        print("now unzipping file %s." % zipped_basecalled_file)
+        tar = tarfile.open(zipped_basecalled_file)
+        tar.extractall(base_called_folder.split(".")[0])
+        tar.close()
     else:
-        seq_sum_file = os.path.join(base_called_folder, thing, 'sequencing_summary.txt')
-        if not os.path.exists(seq_sum_file):
-            print('No sequencing summary file. Please go check')
-            continue
-        seq_df = pd.read_csv(seq_sum_file, sep='\t')
-        #capture the thing as the prefix of the fastq/fasta files in the barcode folders
-        prefix = thing
-        #might be a better way to only read in the wanted columns. Not subsetting afterwards.
-        #please go check
-        seq_df = seq_df.loc[:, seq_df_headers].copy()
+        print("there is something strange in the basecalled folder, please check.")
+else:
+        print("there is something strange in the basecalled folder, please check.")
 
         
 
