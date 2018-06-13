@@ -15,7 +15,7 @@ import subprocess
 # In[2]:
 
 parser = argparse.ArgumentParser(description='This is a script to re-organize nanopore data that has been splited basecalled. It will combine everything into one folder.')
-parser.add_argument("BASEDIR", help="base folder, supposed to have all splited basecalled folders. remenber DO NOT put the backslash '/' at the end!")
+parser.add_argument("BASEDIR", help="full path for base folder, supposed to have all splited basecalled folders. remenber DO NOT put the backslash '/' at the end!")
 args = parser.parse_args()
 
 
