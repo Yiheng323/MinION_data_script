@@ -3,7 +3,6 @@
 
 # This code is to make your life easier when you got a huge chunk of nanopore data to be basecalled separately and you want to make them into one folder again.  
 
-# I use a certain naming system to name each chunk of my data and for each raw data I splited for basecalling I just use name_1, name_2 etc to name them. So this script does not require you to have a typical naming system but it require you to put your splited basecalled folders (unzipped) into one folder that you want to create your conbined files into, and all the splited folder are named as name_1, name_2, etc. make sure the files you put in this folder is a copy.
 
 # In[1]:
 
